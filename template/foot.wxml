@@ -1,0 +1,3 @@
+<template name="foot">
+    <view class="footerview"><text >Copyright © 胖蒜网 All Rights Reserved</text></view>
+</template>

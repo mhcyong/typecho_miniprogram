@@ -1,0 +1,25 @@
+<import src="../../template/foot.wxml" />
+
+<cu-custom bgColor="bg-green"><view slot="content">关于</view></cu-custom>
+
+<view class="bg-white solids-bottom flex align-center">
+  <view class="flex-sub text-center">
+    <view class="solid-bottom text-xl padding">
+      <text class="text-black text-bold">{{item.title}}</text>
+    </view>
+    <view class="padding text-gray text-sm flex justify-between">
+    
+      {{item.created}} 
+      <view class="text-gray text-sm">
+        <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.views}}
+        <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.likes}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bg-white">  
+  <towxml nodes="{{article}}"/>
+</view>
+
+<template is="foot"></template>

@@ -1,0 +1,55 @@
+<cu-custom bgColor="bg-green"><view slot="content">胖蒜</view></cu-custom>
+<scroll-view class="list" scroll-y="true" style="height: {{windowHeight}}px;" bindscrolltolower="loadMore" enable-back-to-top="true">
+	<view class="cu-card case {{isCard?'no-card':''}}">	
+		<view class="cu-item shadow">
+		<navigator class="item_detail"  hover-class="navigator-hover" url="../detail/detail?item={{toplist.cid}}">
+			<view class="image">
+				<image src="{{toplist.str_value}}" mode="widthFix"></image>
+				<view class="cu-tag bg-red">推荐</view>
+				<view class="cu-bar bg-shadeBottom">
+					<text class="text-cut">{{toplist.title}}</text>
+				</view>
+			</view>
+		</navigator>
+			<view class="cu-list menu-avatar">
+				<view class="cu-item">
+					<image class="cu-avatar round lg" src="../../images/avatar.png"></image>
+					<view class="content flex-sub">
+						<view class="text-grey">胖蒜网</view>
+						<view class="text-gray text-sm flex justify-between">
+							{{toplist.created}} 
+							<view class="text-gray text-sm">
+								<text class="cuIcon-attentionfill margin-lr-xs"></text> {{toplist.views}}
+								<text class="cuIcon-appreciatefill margin-lr-xs"></text> {{toplist.likes}}
+								<text class="cuIcon-messagefill margin-lr-xs"></text> {{toplist.commentsNum}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="cu-card article {{isCard?'no-card':''}}" wx:for="{{list}}" wx:key="key">
+		<view class="cu-item shadow">		
+			<navigator class="item_detail"  hover-class="navigator-hover" url="../detail/detail?item={{item.cid}}">
+			<view class="title">
+				<view class="text-cut">{{item.title}}</view>
+			</view>
+			<view class="content">
+				<image src="{{item.str_value}}" mode="aspectFill"></image>
+				<view class="desc">
+					<view class="text-content">{{item.text}}</view> 
+						<view class="text-gray text-sm">
+							{{item.created}} 
+							<text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.views}}
+							<text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.likes}}
+						</view>
+				</view>
+			</view>
+		</navigator>
+		</view>
+	</view>
+  <view class="loading">{{hasMore ? '加载中...' : '已全部加载'}}</view>
+</scroll-view>
+

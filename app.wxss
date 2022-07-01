@@ -1,0 +1,28 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
+
+scroll-view,view,image{
+	margin: 0;
+	padding: 0;
+}
+
+.footerview {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  color: #999999;
+}
